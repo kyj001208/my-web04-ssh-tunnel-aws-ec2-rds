@@ -19,7 +19,7 @@ public class SSHTunnellingProperties {
 	private int sshPort;
 	private String username;
 	private String privateKey;
-	private int localPort;
+	//private int localPort; --random 적용
 	
 	private String rdsHost;
 	private int rdsPort;

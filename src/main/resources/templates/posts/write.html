@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<body>
+	<header>
+		<div>
+			<div style="display:flex; justify-content:space-around; ">
+			<a href="/">HOME</a>
+			<a href="/posts">POST</a>
+			</div>
+			
+			<!--  
+			<div>
+			<a href="/login">회원가입</a>
+			<a href="#">로그인</a>
+			</div>
+			-->
+			
+		</div>
+		<hr/>
+	</header>
+	<main>
+		<div>
+			<h2>POST 작성</h2>
+			<form action="/posts" method="post">	
+				<p>
+					<input type="text" placeholder="제목입력" name="title">
+				</p>
+		
+				<p>
+					<textarea rows="5" cols="100" placeholder="내용입력" name="content"></textarea>
+				</p>
+		
+				<p>
+					<button>등록</button>
+				</p>
+		
+			
+			
+			</form>
+			
+		</div>
+
+	</main>
+
+</body>
+</html>

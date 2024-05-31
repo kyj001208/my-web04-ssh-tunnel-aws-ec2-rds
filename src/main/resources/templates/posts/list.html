@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<body>
+	<header>
+		<div>
+			<div style="display:flex; justify-content:space-around; ">
+			<a href="/">HOME</a>
+			<a href="/posts">POST</a>
+			</div>
+			
+			<!--  
+			<div>
+			<a href="/login">회원가입</a>
+			<a href="#">로그인</a>
+			</div>
+			-->
+			
+		</div>
+		<hr/>
+	</header>
+	<main>
+		<div>
+			<h2>POST(게시글)</h2>
+			<!--  <p th:text="${txt}">모델에 저장된 데이터가 출력됌</p>-->
+			<!-- 중간에 삽입가능하나 구분을 위해 [[${txt}]]안에 넣어줘야함 -->
+			
+			<div style="display: flex; justify-content:flex-end">
+				<a href="/posts/new">작성하기</a>
+			
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>글번호</th>
+						<th>제목</th>
+						<th>내용</th>
+						<th>조회수</th>
+						<th>작성일</th>
+						<th>최종수정일</th>
+					</tr>
+				</thead>
+				<!-- 실제데이터가 들어가는 영역 -->
+				<!-- 데이터바인딩 : 템플릿엔진(thymeleaf): model객체에 저장된 콜렉션(list) -->
+				<!-- th:each=":" =>반복문 문장  -->
+				<!-- ${list} : model에 저장된 list에서 가져오세요 -->
+				<tbody>
+				<tr th:each="vo : ${list}">
+						<td th:text="${vo.no}">글번호</td> <!-- ${vo.no}: getter메서드를 불러옴(get메서드 없을 시 오류) -->
+						<td th:text="${vo.title}">제목</td>
+						<td th:text="${vo.content}">내용</td>
+						<td th:text="${vo.readCount}">조회수</td>
+						<td th:text="${vo.createdAt}">작성일</td>
+						<td th:text="${vo.updatedAt}">최종수정일</td>
+					</tr>
+				</tbody>
+			
+			</table>
+		</div>
+
+	</main>
+
+</body>
+</html>
